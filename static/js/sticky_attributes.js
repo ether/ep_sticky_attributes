@@ -35,7 +35,7 @@ exports.postAceInit = function(hook, context){
 
 // Change the attribute into a class	
 exports.aceAttribsToClasses = function(hook, context){
-  console.log("attribs", context);
+  // console.log("attribs", context);
   if(context.key.indexOf("hidden") !== -1){
     return ['hidden'];
   }
