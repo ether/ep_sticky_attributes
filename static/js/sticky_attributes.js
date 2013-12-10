@@ -34,23 +34,23 @@ exports.aceKeyEvent = function(hook, callstack, editorInfo, rep, documentAttribu
   if(rep.selStart[0] == rep.selEnd[0] && rep.selEnd[1] == rep.selStart[1]){
     if(evt.ctrlKey && (k == 66 || k == 73 || k == 85) && evt.type == "keyup"){
       // handling bold, italic or underline event
-      callstack.editorInfo.ace_replaceRange(undefined, undefined, "V");
+      callstack.editorInfo.ace_replaceRange(undefined, undefined, "V"); // puts in a secret hidden cahracter
       var attribute = attributes[k]; // which attribute is it?
       // we need to know if the previous char has the attribute bold or not?
-      if(rep.selStart[1] != 1){
+      if(rep.selStart[1] != 1){ // seems messy but basically this is required to know if we're following a previous attribute
         rep.selStart[1] = rep.selStart[1]-1;
         rep.selEnd[1] = rep.selEnd[1]-1;
         var isApplied = callstack.editorInfo.ace_getAttributeOnSelection(attribute);
         rep.selStart[1] = rep.selStart[1]+1;
         rep.selEnd[1] = rep.selEnd[1]+1;
       }
-      rep.selStart[1] = rep.selStart[1]-1;
+      rep.selStart[1] = rep.selStart[1]-1; // overwrite the secret hidden character
       if(!isApplied){ // If the attribute is not already applied
         callstack.editorInfo.ace_setAttributeOnSelection(attribute, true);
       }else{
         callstack.editorInfo.ace_setAttributeOnSelection(attribute, false);
       }
-      documentAttributeManager.setAttributesOnRange(rep.selStart, rep.selEnd, [ ['hidden', true] ]);
+      documentAttributeManager.setAttributesOnRange(rep.selStart, rep.selEnd, [ ['hidden', true] ]); // hides the car
     }
   }
 }
