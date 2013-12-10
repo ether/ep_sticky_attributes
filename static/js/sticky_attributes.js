@@ -26,17 +26,32 @@ exports.aceKeyEvent = function(hook, callstack, editorInfo, rep, documentAttribu
   var k = evt.keyCode;
   var rep = callstack.rep;
   var documentAttributeManager = callstack.documentAttributeManager;
+  var attributes = {
+    66: "bold",
+    73: "italic",
+    85: "underline"
+  }
   if(rep.selStart[0] == rep.selEnd[0] && rep.selEnd[1] == rep.selStart[1]){
     if(evt.ctrlKey && (k == 66 || k == 73 || k == 85) && evt.type == "keyup"){
       // handling bold, italic or underline event
       callstack.editorInfo.ace_replaceRange(undefined, undefined, "V");
+      var attribute = attributes[k]; // which attribute is it?
+      // we need to know if the previous char has the attribute bold or not?
+      if(rep.selStart[1] != 1){
+        rep.selStart[1] = rep.selStart[1]-1;
+        rep.selEnd[1] = rep.selEnd[1]-1;
+        var isApplied = callstack.editorInfo.ace_getAttributeOnSelection(attribute);
+        rep.selStart[1] = rep.selStart[1]+1;
+        rep.selEnd[1] = rep.selEnd[1]+1;
+      }
       rep.selStart[1] = rep.selStart[1]-1;
-      if(k == 66) callstack.editorInfo.ace_toggleAttributeOnSelection("bold");
-      if(k == 73) callstack.editorInfo.ace_toggleAttributeOnSelection("italic");
-      if(k == 85) callstack.editorInfo.ace_toggleAttributeOnSelection("underline");
+      if(!isApplied){ // If the attribute is not already applied
+        callstack.editorInfo.ace_setAttributeOnSelection(attribute, true);
+      }else{
+        callstack.editorInfo.ace_setAttributeOnSelection(attribute, false);
+      }
       documentAttributeManager.setAttributesOnRange(rep.selStart, rep.selEnd, [ ['hidden', true] ]);
     }
-
   }
 }
 
@@ -47,12 +62,22 @@ exports.aceEditEvent = function(hook, call, editorInfo, rep, documentAttributeMa
   }
   setTimeout(function(){ // avoid race condition..
     // the caret is in a new position..  Let's do some funky shit
-    if ( call.editorInfo.ace_getAttributeOnSelection("bold") ) {
-      // show the button as being depressed..  Not sad, but active.. You know the drill bitches.
+    if ( call.editorInfo.ace_getAttributeOnSelection("bold") ) { // show the button as being depressed..  Not sad, but active.. You know the drill bitches.
       $('#bold > a').addClass('activeButton');
     }else{
       $('#bold > a').removeClass('activeButton');
     }
+    if ( call.editorInfo.ace_getAttributeOnSelection("italic") ) { // show the button as being depressed..  Not sad, but active.. You know the drill bitches.
+      $('#italic > a').addClass('activeButton');
+    }else{
+      $('#italic > a').removeClass('activeButton');
+    }
+    if ( call.editorInfo.ace_getAttributeOnSelection("underline") ) { // show the button as being depressed..  Not sad, but active.. You know the drill bitches.
+      $('#underline > a').addClass('activeButton');
+    }else{
+      $('#underline > a').removeClass('activeButton');
+    }
+
   },250);
 }
 
