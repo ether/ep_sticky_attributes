@@ -1,318 +1,146 @@
 0 info it worked if it ends with ok
-1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'publish', '-f' ]
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'publish' ]
 2 info using npm@1.2.18
 3 info using node@v0.10.4
-4 warn using --force I sure hope you know what you are doing.
-5 verbose publish [ '.' ]
-6 verbose read json /home/jose/etherpad-lite/node_modules/ep_sticky_attributes/package.json
-7 warn package.json ep_sticky_attributes@0.0.1 No README.md file found!
-8 verbose cache add [ '.', null ]
-9 verbose cache add name=undefined spec="." args=[".",null]
-10 verbose parsed url { protocol: null,
-10 verbose parsed url   slashes: null,
-10 verbose parsed url   auth: null,
-10 verbose parsed url   host: null,
-10 verbose parsed url   port: null,
-10 verbose parsed url   hostname: null,
-10 verbose parsed url   hash: null,
-10 verbose parsed url   search: null,
-10 verbose parsed url   query: null,
-10 verbose parsed url   pathname: '.',
-10 verbose parsed url   path: '.',
-10 verbose parsed url   href: '.' }
-11 silly lockFile 3a52ce78- .
-12 verbose lock . /home/jose/.npm/3a52ce78-.lock
-13 verbose read json package.json
-14 verbose tar pack [ '/home/jose/tmp/npm-15711/1386696677894-0.5980563615448773/tmp.tgz',
-14 verbose tar pack   '.' ]
-15 verbose tarball /home/jose/tmp/npm-15711/1386696677894-0.5980563615448773/tmp.tgz
-16 verbose folder .
-17 info prepublish ep_sticky_attributes@0.0.1
-18 silly lockFile 3a52ce78- .
-19 verbose lock . /home/jose/.npm/3a52ce78-.lock
-20 silly lockFile d0adea34-77894-0-5980563615448773-tmp-tgz /home/jose/tmp/npm-15711/1386696677894-0.5980563615448773/tmp.tgz
-21 verbose lock /home/jose/tmp/npm-15711/1386696677894-0.5980563615448773/tmp.tgz /home/jose/.npm/d0adea34-77894-0-5980563615448773-tmp-tgz.lock
+4 verbose publish [ '.' ]
+5 verbose read json /home/jose/etherpad-lite/node_modules/ep_sticky_attributes/package.json
+6 warn package.json ep_sticky_attributes@0.0.2 No README.md file found!
+7 verbose cache add [ '.', null ]
+8 verbose cache add name=undefined spec="." args=[".",null]
+9 verbose parsed url { protocol: null,
+9 verbose parsed url   slashes: null,
+9 verbose parsed url   auth: null,
+9 verbose parsed url   host: null,
+9 verbose parsed url   port: null,
+9 verbose parsed url   hostname: null,
+9 verbose parsed url   hash: null,
+9 verbose parsed url   search: null,
+9 verbose parsed url   query: null,
+9 verbose parsed url   pathname: '.',
+9 verbose parsed url   path: '.',
+9 verbose parsed url   href: '.' }
+10 silly lockFile 3a52ce78- .
+11 verbose lock . /home/jose/.npm/3a52ce78-.lock
+12 verbose read json package.json
+13 verbose tar pack [ '/home/jose/tmp/npm-16158/1386702379490-0.4797918642871082/tmp.tgz',
+13 verbose tar pack   '.' ]
+14 verbose tarball /home/jose/tmp/npm-16158/1386702379490-0.4797918642871082/tmp.tgz
+15 verbose folder .
+16 info prepublish ep_sticky_attributes@0.0.2
+17 silly lockFile 3a52ce78- .
+18 verbose lock . /home/jose/.npm/3a52ce78-.lock
+19 silly lockFile ce770e03-79490-0-4797918642871082-tmp-tgz /home/jose/tmp/npm-16158/1386702379490-0.4797918642871082/tmp.tgz
+20 verbose lock /home/jose/tmp/npm-16158/1386702379490-0.4797918642871082/tmp.tgz /home/jose/.npm/ce770e03-79490-0-4797918642871082-tmp-tgz.lock
+21 silly lockFile 3a52ce78- .
 22 silly lockFile 3a52ce78- .
-23 silly lockFile 3a52ce78- .
-24 silly lockFile d0adea34-77894-0-5980563615448773-tmp-tgz /home/jose/tmp/npm-15711/1386696677894-0.5980563615448773/tmp.tgz
-25 silly lockFile d0adea34-77894-0-5980563615448773-tmp-tgz /home/jose/tmp/npm-15711/1386696677894-0.5980563615448773/tmp.tgz
-26 verbose tar unpack /home/jose/tmp/npm-15711/1386696677894-0.5980563615448773/tmp.tgz
-27 silly lockFile 01dd5f7d-77894-0-5980563615448773-package /home/jose/tmp/npm-15711/1386696677894-0.5980563615448773/package
-28 verbose lock /home/jose/tmp/npm-15711/1386696677894-0.5980563615448773/package /home/jose/.npm/01dd5f7d-77894-0-5980563615448773-package.lock
-29 silly lockFile d0adea34-77894-0-5980563615448773-tmp-tgz /home/jose/tmp/npm-15711/1386696677894-0.5980563615448773/tmp.tgz
-30 verbose lock /home/jose/tmp/npm-15711/1386696677894-0.5980563615448773/tmp.tgz /home/jose/.npm/d0adea34-77894-0-5980563615448773-tmp-tgz.lock
-31 silly gunzTarPerm modes [ '755', '644' ]
-32 silly gunzTarPerm extractEntry package.json
-33 silly gunzTarPerm extractEntry .npmignore
-34 silly gunzTarPerm extractEntry .travis.yml
-35 silly gunzTarPerm extractEntry ep.json
-36 silly gunzTarPerm extractEntry static/css/ace.css
-37 silly gunzTarPerm extractEntry static/js/sticky_attributes.js
-38 verbose read json /home/jose/tmp/npm-15711/1386696677894-0.5980563615448773/package/package.json
-39 silly lockFile 01dd5f7d-77894-0-5980563615448773-package /home/jose/tmp/npm-15711/1386696677894-0.5980563615448773/package
-40 silly lockFile 01dd5f7d-77894-0-5980563615448773-package /home/jose/tmp/npm-15711/1386696677894-0.5980563615448773/package
-41 silly lockFile d0adea34-77894-0-5980563615448773-tmp-tgz /home/jose/tmp/npm-15711/1386696677894-0.5980563615448773/tmp.tgz
-42 silly lockFile d0adea34-77894-0-5980563615448773-tmp-tgz /home/jose/tmp/npm-15711/1386696677894-0.5980563615448773/tmp.tgz
-43 verbose from cache /home/jose/tmp/npm-15711/1386696677894-0.5980563615448773/package/package.json
-44 verbose tar pack [ '/home/jose/.npm/ep_sticky_attributes/0.0.1/package.tgz',
-44 verbose tar pack   '/home/jose/tmp/npm-15711/1386696677894-0.5980563615448773/package' ]
-45 verbose tarball /home/jose/.npm/ep_sticky_attributes/0.0.1/package.tgz
-46 verbose folder /home/jose/tmp/npm-15711/1386696677894-0.5980563615448773/package
-47 silly lockFile 01dd5f7d-77894-0-5980563615448773-package /home/jose/tmp/npm-15711/1386696677894-0.5980563615448773/package
-48 verbose lock /home/jose/tmp/npm-15711/1386696677894-0.5980563615448773/package /home/jose/.npm/01dd5f7d-77894-0-5980563615448773-package.lock
-49 silly lockFile 6b725927-cky-attributes-0-0-1-package-tgz /home/jose/.npm/ep_sticky_attributes/0.0.1/package.tgz
-50 verbose lock /home/jose/.npm/ep_sticky_attributes/0.0.1/package.tgz /home/jose/.npm/6b725927-cky-attributes-0-0-1-package-tgz.lock
-51 silly lockFile 01dd5f7d-77894-0-5980563615448773-package /home/jose/tmp/npm-15711/1386696677894-0.5980563615448773/package
-52 silly lockFile 01dd5f7d-77894-0-5980563615448773-package /home/jose/tmp/npm-15711/1386696677894-0.5980563615448773/package
-53 silly lockFile 6b725927-cky-attributes-0-0-1-package-tgz /home/jose/.npm/ep_sticky_attributes/0.0.1/package.tgz
-54 silly lockFile 6b725927-cky-attributes-0-0-1-package-tgz /home/jose/.npm/ep_sticky_attributes/0.0.1/package.tgz
-55 silly lockFile 7ba7ed9f--sticky-attributes-0-0-1-package /home/jose/.npm/ep_sticky_attributes/0.0.1/package
-56 verbose lock /home/jose/.npm/ep_sticky_attributes/0.0.1/package /home/jose/.npm/7ba7ed9f--sticky-attributes-0-0-1-package.lock
-57 silly lockFile 7ba7ed9f--sticky-attributes-0-0-1-package /home/jose/.npm/ep_sticky_attributes/0.0.1/package
-58 silly lockFile 7ba7ed9f--sticky-attributes-0-0-1-package /home/jose/.npm/ep_sticky_attributes/0.0.1/package
-59 verbose tar unpack /home/jose/.npm/ep_sticky_attributes/0.0.1/package.tgz
-60 silly lockFile 7ba7ed9f--sticky-attributes-0-0-1-package /home/jose/.npm/ep_sticky_attributes/0.0.1/package
-61 verbose lock /home/jose/.npm/ep_sticky_attributes/0.0.1/package /home/jose/.npm/7ba7ed9f--sticky-attributes-0-0-1-package.lock
-62 silly lockFile 6b725927-cky-attributes-0-0-1-package-tgz /home/jose/.npm/ep_sticky_attributes/0.0.1/package.tgz
-63 verbose lock /home/jose/.npm/ep_sticky_attributes/0.0.1/package.tgz /home/jose/.npm/6b725927-cky-attributes-0-0-1-package-tgz.lock
-64 silly gunzTarPerm modes [ '755', '644' ]
-65 silly gunzTarPerm extractEntry package.json
-66 silly gunzTarPerm extractEntry .npmignore
-67 silly gunzTarPerm extractEntry .travis.yml
-68 silly gunzTarPerm extractEntry ep.json
-69 silly gunzTarPerm extractEntry static/css/ace.css
-70 silly gunzTarPerm extractEntry static/js/sticky_attributes.js
-71 verbose read json /home/jose/.npm/ep_sticky_attributes/0.0.1/package/package.json
-72 silly lockFile 7ba7ed9f--sticky-attributes-0-0-1-package /home/jose/.npm/ep_sticky_attributes/0.0.1/package
-73 silly lockFile 7ba7ed9f--sticky-attributes-0-0-1-package /home/jose/.npm/ep_sticky_attributes/0.0.1/package
-74 silly lockFile 6b725927-cky-attributes-0-0-1-package-tgz /home/jose/.npm/ep_sticky_attributes/0.0.1/package.tgz
-75 silly lockFile 6b725927-cky-attributes-0-0-1-package-tgz /home/jose/.npm/ep_sticky_attributes/0.0.1/package.tgz
-76 silly shasum updated bytes 2113
-77 info shasum b96b9db6cf91ec84113939b03650d129ae901c1e
-77 info shasum /home/jose/.npm/ep_sticky_attributes/0.0.1/package.tgz
-78 verbose from cache /home/jose/.npm/ep_sticky_attributes/0.0.1/package/package.json
-79 verbose chmod /home/jose/.npm/ep_sticky_attributes/0.0.1/package.tgz 644
-80 verbose chown /home/jose/.npm/ep_sticky_attributes/0.0.1/package.tgz [ 1000, 1000 ]
-81 silly lockFile 3a52ce78- .
-82 silly publish { name: 'ep_sticky_attributes',
-82 silly publish   version: '0.0.1',
-82 silly publish   keywords:
-82 silly publish    [ 'bold',
-82 silly publish      'formatting',
-82 silly publish      'sticky_attributes',
-82 silly publish      'attributes',
-82 silly publish      'style',
-82 silly publish      'italic',
-82 silly publish      'underline' ],
-82 silly publish   description: 'Add support to for attributes to stick on the caret position IE pressing bold button then typing creates bold text or hitting control b then typing creates bold text.  Works for underline, italic, bold',
-82 silly publish   author:
-82 silly publish    { name: 'John McLear',
-82 silly publish      email: 'john@mclear.co.uk',
-82 silly publish      url: 'http://mclear.co.uk' },
-82 silly publish   repository:
-82 silly publish    { type: 'git',
-82 silly publish      url: 'git://github.com/johnmclear/ep_sticky_attributes.git' },
-82 silly publish   dependencies: {},
-82 silly publish   engines: { node: '*' },
-82 silly publish   _id: 'ep_sticky_attributes@0.0.1',
-82 silly publish   readme: 'ERROR: No README.md file found!',
-82 silly publish   dist: { shasum: 'b96b9db6cf91ec84113939b03650d129ae901c1e' },
-82 silly publish   _from: '.' }
-83 verbose url raw ep_sticky_attributes
-84 verbose url resolving [ 'https://registry.npmjs.org/', './ep_sticky_attributes' ]
-85 verbose url resolved https://registry.npmjs.org/ep_sticky_attributes
-86 info trying registry request attempt 1 at 17:31:28
-87 http PUT https://registry.npmjs.org/ep_sticky_attributes
-88 http 409 https://registry.npmjs.org/ep_sticky_attributes
-89 verbose url raw ep_sticky_attributes
-90 verbose url resolving [ 'https://registry.npmjs.org/', './ep_sticky_attributes' ]
-91 verbose url resolved https://registry.npmjs.org/ep_sticky_attributes
-92 info trying registry request attempt 1 at 17:31:29
-93 http GET https://registry.npmjs.org/ep_sticky_attributes
-94 http 200 https://registry.npmjs.org/ep_sticky_attributes
-95 verbose uploading [ 'ep_sticky_attributes/-/ep_sticky_attributes-0.0.1.tgz/-rev/2-4becf1063134367ec507a9ae07caeacd',
-95 verbose uploading   '/home/jose/.npm/ep_sticky_attributes/0.0.1/package.tgz' ]
-96 verbose url raw ep_sticky_attributes/-/ep_sticky_attributes-0.0.1.tgz/-rev/2-4becf1063134367ec507a9ae07caeacd
-97 verbose url resolving [ 'https://registry.npmjs.org/',
-97 verbose url resolving   './ep_sticky_attributes/-/ep_sticky_attributes-0.0.1.tgz/-rev/2-4becf1063134367ec507a9ae07caeacd' ]
-98 verbose url resolved https://registry.npmjs.org/ep_sticky_attributes/-/ep_sticky_attributes-0.0.1.tgz/-rev/2-4becf1063134367ec507a9ae07caeacd
-99 info trying registry request attempt 1 at 17:31:30
-100 http PUT https://registry.npmjs.org/ep_sticky_attributes/-/ep_sticky_attributes-0.0.1.tgz/-rev/2-4becf1063134367ec507a9ae07caeacd
-101 http 409 https://registry.npmjs.org/ep_sticky_attributes/-/ep_sticky_attributes-0.0.1.tgz/-rev/2-4becf1063134367ec507a9ae07caeacd
-102 warn publish Forced publish over ep_sticky_attributes@0.0.1
-103 verbose url raw ep_sticky_attributes
-104 verbose url resolving [ 'https://registry.npmjs.org/', './ep_sticky_attributes' ]
-105 verbose url resolved https://registry.npmjs.org/ep_sticky_attributes
-106 info trying registry request attempt 1 at 17:31:31
-107 http GET https://registry.npmjs.org/ep_sticky_attributes
-108 http 200 https://registry.npmjs.org/ep_sticky_attributes
-109 silly registry.get cb [ 200,
-109 silly registry.get   { vary: 'Accept',
-109 silly registry.get     server: 'CouchDB/1.3.1 (Erlang OTP/R15B03)',
-109 silly registry.get     etag: '"5PIC6VNX5NHDAKVZJODSC5ARM"',
-109 silly registry.get     date: 'Tue, 10 Dec 2013 17:31:35 GMT',
-109 silly registry.get     'content-type': 'application/json',
-109 silly registry.get     'content-length': '640' } ]
-110 info unpublish ep_sticky_attributes@0.0.1 not published
-111 info unpublish No versions remain, removing entire package
-112 verbose url raw ep_sticky_attributes/-rev/2-4becf1063134367ec507a9ae07caeacd
-113 verbose url resolving [ 'https://registry.npmjs.org/',
-113 verbose url resolving   './ep_sticky_attributes/-rev/2-4becf1063134367ec507a9ae07caeacd' ]
-114 verbose url resolved https://registry.npmjs.org/ep_sticky_attributes/-rev/2-4becf1063134367ec507a9ae07caeacd
-115 info trying registry request attempt 1 at 17:31:32
-116 http DELETE https://registry.npmjs.org/ep_sticky_attributes/-rev/2-4becf1063134367ec507a9ae07caeacd
-117 http 409 https://registry.npmjs.org/ep_sticky_attributes/-rev/2-4becf1063134367ec507a9ae07caeacd
-118 verbose publish [ '.' ]
-119 verbose from cache /home/jose/etherpad-lite/node_modules/ep_sticky_attributes/package.json
-120 verbose cache add [ '.', null ]
-121 verbose cache add name=undefined spec="." args=[".",null]
-122 verbose parsed url { protocol: null,
-122 verbose parsed url   slashes: null,
-122 verbose parsed url   auth: null,
-122 verbose parsed url   host: null,
-122 verbose parsed url   port: null,
-122 verbose parsed url   hostname: null,
-122 verbose parsed url   hash: null,
-122 verbose parsed url   search: null,
-122 verbose parsed url   query: null,
-122 verbose parsed url   pathname: '.',
-122 verbose parsed url   path: '.',
-122 verbose parsed url   href: '.' }
-123 silly lockFile 3a52ce78- .
-124 verbose lock . /home/jose/.npm/3a52ce78-.lock
-125 verbose from cache package.json
-126 verbose tar pack [ '/home/jose/tmp/npm-15711/1386696693751-0.914624793222174/tmp.tgz',
-126 verbose tar pack   '.' ]
-127 verbose tarball /home/jose/tmp/npm-15711/1386696693751-0.914624793222174/tmp.tgz
-128 verbose folder .
-129 info prepublish ep_sticky_attributes@0.0.1
-130 silly lockFile 3a52ce78- .
-131 verbose lock . /home/jose/.npm/3a52ce78-.lock
-132 silly lockFile 8e5c66a5-693751-0-914624793222174-tmp-tgz /home/jose/tmp/npm-15711/1386696693751-0.914624793222174/tmp.tgz
-133 verbose lock /home/jose/tmp/npm-15711/1386696693751-0.914624793222174/tmp.tgz /home/jose/.npm/8e5c66a5-693751-0-914624793222174-tmp-tgz.lock
-134 silly lockFile 3a52ce78- .
-135 silly lockFile 3a52ce78- .
-136 silly lockFile 8e5c66a5-693751-0-914624793222174-tmp-tgz /home/jose/tmp/npm-15711/1386696693751-0.914624793222174/tmp.tgz
-137 silly lockFile 8e5c66a5-693751-0-914624793222174-tmp-tgz /home/jose/tmp/npm-15711/1386696693751-0.914624793222174/tmp.tgz
-138 verbose tar unpack /home/jose/tmp/npm-15711/1386696693751-0.914624793222174/tmp.tgz
-139 silly lockFile c42c2677-693751-0-914624793222174-package /home/jose/tmp/npm-15711/1386696693751-0.914624793222174/package
-140 verbose lock /home/jose/tmp/npm-15711/1386696693751-0.914624793222174/package /home/jose/.npm/c42c2677-693751-0-914624793222174-package.lock
-141 silly lockFile 8e5c66a5-693751-0-914624793222174-tmp-tgz /home/jose/tmp/npm-15711/1386696693751-0.914624793222174/tmp.tgz
-142 verbose lock /home/jose/tmp/npm-15711/1386696693751-0.914624793222174/tmp.tgz /home/jose/.npm/8e5c66a5-693751-0-914624793222174-tmp-tgz.lock
-143 silly gunzTarPerm modes [ '755', '644' ]
-144 silly gunzTarPerm extractEntry package.json
-145 silly gunzTarPerm extractEntry .npmignore
-146 silly gunzTarPerm extractEntry .travis.yml
-147 silly gunzTarPerm extractEntry ep.json
-148 silly gunzTarPerm extractEntry static/css/ace.css
-149 silly gunzTarPerm extractEntry static/js/sticky_attributes.js
-150 verbose read json /home/jose/tmp/npm-15711/1386696693751-0.914624793222174/package/package.json
-151 silly lockFile c42c2677-693751-0-914624793222174-package /home/jose/tmp/npm-15711/1386696693751-0.914624793222174/package
-152 silly lockFile c42c2677-693751-0-914624793222174-package /home/jose/tmp/npm-15711/1386696693751-0.914624793222174/package
-153 silly lockFile 8e5c66a5-693751-0-914624793222174-tmp-tgz /home/jose/tmp/npm-15711/1386696693751-0.914624793222174/tmp.tgz
-154 silly lockFile 8e5c66a5-693751-0-914624793222174-tmp-tgz /home/jose/tmp/npm-15711/1386696693751-0.914624793222174/tmp.tgz
-155 verbose from cache /home/jose/tmp/npm-15711/1386696693751-0.914624793222174/package/package.json
-156 verbose tar pack [ '/home/jose/.npm/ep_sticky_attributes/0.0.1/package.tgz',
-156 verbose tar pack   '/home/jose/tmp/npm-15711/1386696693751-0.914624793222174/package' ]
-157 verbose tarball /home/jose/.npm/ep_sticky_attributes/0.0.1/package.tgz
-158 verbose folder /home/jose/tmp/npm-15711/1386696693751-0.914624793222174/package
-159 silly lockFile c42c2677-693751-0-914624793222174-package /home/jose/tmp/npm-15711/1386696693751-0.914624793222174/package
-160 verbose lock /home/jose/tmp/npm-15711/1386696693751-0.914624793222174/package /home/jose/.npm/c42c2677-693751-0-914624793222174-package.lock
-161 silly lockFile 6b725927-cky-attributes-0-0-1-package-tgz /home/jose/.npm/ep_sticky_attributes/0.0.1/package.tgz
-162 verbose lock /home/jose/.npm/ep_sticky_attributes/0.0.1/package.tgz /home/jose/.npm/6b725927-cky-attributes-0-0-1-package-tgz.lock
-163 silly lockFile c42c2677-693751-0-914624793222174-package /home/jose/tmp/npm-15711/1386696693751-0.914624793222174/package
-164 silly lockFile c42c2677-693751-0-914624793222174-package /home/jose/tmp/npm-15711/1386696693751-0.914624793222174/package
-165 silly lockFile 6b725927-cky-attributes-0-0-1-package-tgz /home/jose/.npm/ep_sticky_attributes/0.0.1/package.tgz
-166 silly lockFile 6b725927-cky-attributes-0-0-1-package-tgz /home/jose/.npm/ep_sticky_attributes/0.0.1/package.tgz
-167 silly lockFile 7ba7ed9f--sticky-attributes-0-0-1-package /home/jose/.npm/ep_sticky_attributes/0.0.1/package
-168 verbose lock /home/jose/.npm/ep_sticky_attributes/0.0.1/package /home/jose/.npm/7ba7ed9f--sticky-attributes-0-0-1-package.lock
-169 silly lockFile 7ba7ed9f--sticky-attributes-0-0-1-package /home/jose/.npm/ep_sticky_attributes/0.0.1/package
-170 silly lockFile 7ba7ed9f--sticky-attributes-0-0-1-package /home/jose/.npm/ep_sticky_attributes/0.0.1/package
-171 verbose tar unpack /home/jose/.npm/ep_sticky_attributes/0.0.1/package.tgz
-172 silly lockFile 7ba7ed9f--sticky-attributes-0-0-1-package /home/jose/.npm/ep_sticky_attributes/0.0.1/package
-173 verbose lock /home/jose/.npm/ep_sticky_attributes/0.0.1/package /home/jose/.npm/7ba7ed9f--sticky-attributes-0-0-1-package.lock
-174 silly lockFile 6b725927-cky-attributes-0-0-1-package-tgz /home/jose/.npm/ep_sticky_attributes/0.0.1/package.tgz
-175 verbose lock /home/jose/.npm/ep_sticky_attributes/0.0.1/package.tgz /home/jose/.npm/6b725927-cky-attributes-0-0-1-package-tgz.lock
-176 silly gunzTarPerm modes [ '755', '644' ]
-177 silly gunzTarPerm extractEntry package.json
-178 silly gunzTarPerm extractEntry .npmignore
-179 silly gunzTarPerm extractEntry .travis.yml
-180 silly gunzTarPerm extractEntry ep.json
-181 silly gunzTarPerm extractEntry static/css/ace.css
-182 silly gunzTarPerm extractEntry static/js/sticky_attributes.js
-183 verbose from cache /home/jose/.npm/ep_sticky_attributes/0.0.1/package/package.json
-184 silly lockFile 7ba7ed9f--sticky-attributes-0-0-1-package /home/jose/.npm/ep_sticky_attributes/0.0.1/package
-185 silly lockFile 7ba7ed9f--sticky-attributes-0-0-1-package /home/jose/.npm/ep_sticky_attributes/0.0.1/package
-186 silly lockFile 6b725927-cky-attributes-0-0-1-package-tgz /home/jose/.npm/ep_sticky_attributes/0.0.1/package.tgz
-187 silly lockFile 6b725927-cky-attributes-0-0-1-package-tgz /home/jose/.npm/ep_sticky_attributes/0.0.1/package.tgz
-188 silly shasum updated bytes 2113
-189 info shasum b96b9db6cf91ec84113939b03650d129ae901c1e
-189 info shasum /home/jose/.npm/ep_sticky_attributes/0.0.1/package.tgz
-190 verbose from cache /home/jose/.npm/ep_sticky_attributes/0.0.1/package/package.json
-191 verbose chmod /home/jose/.npm/ep_sticky_attributes/0.0.1/package.tgz 644
-192 verbose chown /home/jose/.npm/ep_sticky_attributes/0.0.1/package.tgz [ 1000, 1000 ]
-193 silly lockFile 3a52ce78- .
-194 silly publish { name: 'ep_sticky_attributes',
-194 silly publish   version: '0.0.1',
-194 silly publish   keywords:
-194 silly publish    [ 'bold',
-194 silly publish      'formatting',
-194 silly publish      'sticky_attributes',
-194 silly publish      'attributes',
-194 silly publish      'style',
-194 silly publish      'italic',
-194 silly publish      'underline' ],
-194 silly publish   description: 'Add support to for attributes to stick on the caret position IE pressing bold button then typing creates bold text or hitting control b then typing creates bold text.  Works for underline, italic, bold',
-194 silly publish   author:
-194 silly publish    { name: 'John McLear',
-194 silly publish      email: 'john@mclear.co.uk',
-194 silly publish      url: 'http://mclear.co.uk' },
-194 silly publish   repository:
-194 silly publish    { type: 'git',
-194 silly publish      url: 'git://github.com/johnmclear/ep_sticky_attributes.git' },
-194 silly publish   dependencies: {},
-194 silly publish   engines: { node: '*' },
-194 silly publish   _id: 'ep_sticky_attributes@0.0.1',
-194 silly publish   readme: 'ERROR: No README.md file found!',
-194 silly publish   dist:
-194 silly publish    { shasum: 'b96b9db6cf91ec84113939b03650d129ae901c1e',
-194 silly publish      tarball: 'http://registry.npmjs.org/ep_sticky_attributes/-/ep_sticky_attributes-0.0.1.tgz' },
-194 silly publish   _from: '.',
-194 silly publish   _npmVersion: '1.2.18',
-194 silly publish   _npmUser: { name: 'johnyma22', email: 'john@mclear.co.uk' } }
-195 verbose url raw ep_sticky_attributes
-196 verbose url resolving [ 'https://registry.npmjs.org/', './ep_sticky_attributes' ]
-197 verbose url resolved https://registry.npmjs.org/ep_sticky_attributes
-198 info trying registry request attempt 1 at 17:31:44
-199 http PUT https://registry.npmjs.org/ep_sticky_attributes
-200 http 409 https://registry.npmjs.org/ep_sticky_attributes
-201 verbose url raw ep_sticky_attributes
-202 verbose url resolving [ 'https://registry.npmjs.org/', './ep_sticky_attributes' ]
-203 verbose url resolved https://registry.npmjs.org/ep_sticky_attributes
-204 info trying registry request attempt 1 at 17:31:45
-205 http GET https://registry.npmjs.org/ep_sticky_attributes
-206 http 200 https://registry.npmjs.org/ep_sticky_attributes
-207 verbose uploading [ 'ep_sticky_attributes/-/ep_sticky_attributes-0.0.1.tgz/-rev/2-4becf1063134367ec507a9ae07caeacd',
-207 verbose uploading   '/home/jose/.npm/ep_sticky_attributes/0.0.1/package.tgz' ]
-208 verbose url raw ep_sticky_attributes/-/ep_sticky_attributes-0.0.1.tgz/-rev/2-4becf1063134367ec507a9ae07caeacd
-209 verbose url resolving [ 'https://registry.npmjs.org/',
-209 verbose url resolving   './ep_sticky_attributes/-/ep_sticky_attributes-0.0.1.tgz/-rev/2-4becf1063134367ec507a9ae07caeacd' ]
-210 verbose url resolved https://registry.npmjs.org/ep_sticky_attributes/-/ep_sticky_attributes-0.0.1.tgz/-rev/2-4becf1063134367ec507a9ae07caeacd
-211 info trying registry request attempt 1 at 17:31:46
-212 http PUT https://registry.npmjs.org/ep_sticky_attributes/-/ep_sticky_attributes-0.0.1.tgz/-rev/2-4becf1063134367ec507a9ae07caeacd
-213 http 409 https://registry.npmjs.org/ep_sticky_attributes/-/ep_sticky_attributes-0.0.1.tgz/-rev/2-4becf1063134367ec507a9ae07caeacd
-214 error publish fail Cannot publish over existing version.
-214 error publish fail Update the 'version' field in package.json and try again.
-214 error publish fail
-214 error publish fail If the previous version was published in error, see:
-214 error publish fail     npm help unpublish
-214 error publish fail
-214 error publish fail To automatically increment version numbers, see:
-214 error publish fail     npm help version
-215 error System Linux 3.5.0-18-generic
-216 error command "/usr/local/bin/node" "/usr/local/bin/npm" "publish" "-f"
-217 error cwd /home/jose/etherpad-lite/node_modules/ep_sticky_attributes
-218 error node -v v0.10.4
-219 error npm -v 1.2.18
-220 error code EPUBLISHCONFLICT
-221 verbose exit [ 1, true ]
+23 silly lockFile ce770e03-79490-0-4797918642871082-tmp-tgz /home/jose/tmp/npm-16158/1386702379490-0.4797918642871082/tmp.tgz
+24 silly lockFile ce770e03-79490-0-4797918642871082-tmp-tgz /home/jose/tmp/npm-16158/1386702379490-0.4797918642871082/tmp.tgz
+25 verbose tar unpack /home/jose/tmp/npm-16158/1386702379490-0.4797918642871082/tmp.tgz
+26 silly lockFile b3b6315a-79490-0-4797918642871082-package /home/jose/tmp/npm-16158/1386702379490-0.4797918642871082/package
+27 verbose lock /home/jose/tmp/npm-16158/1386702379490-0.4797918642871082/package /home/jose/.npm/b3b6315a-79490-0-4797918642871082-package.lock
+28 silly lockFile ce770e03-79490-0-4797918642871082-tmp-tgz /home/jose/tmp/npm-16158/1386702379490-0.4797918642871082/tmp.tgz
+29 verbose lock /home/jose/tmp/npm-16158/1386702379490-0.4797918642871082/tmp.tgz /home/jose/.npm/ce770e03-79490-0-4797918642871082-tmp-tgz.lock
+30 silly gunzTarPerm modes [ '755', '644' ]
+31 silly gunzTarPerm extractEntry package.json
+32 silly gunzTarPerm extractEntry .npmignore
+33 silly gunzTarPerm extractEntry .travis.yml
+34 silly gunzTarPerm extractEntry ep.json
+35 silly gunzTarPerm extractEntry static/css/ace.css
+36 silly gunzTarPerm extractEntry static/js/sticky_attributes.js
+37 verbose read json /home/jose/tmp/npm-16158/1386702379490-0.4797918642871082/package/package.json
+38 silly lockFile b3b6315a-79490-0-4797918642871082-package /home/jose/tmp/npm-16158/1386702379490-0.4797918642871082/package
+39 silly lockFile b3b6315a-79490-0-4797918642871082-package /home/jose/tmp/npm-16158/1386702379490-0.4797918642871082/package
+40 silly lockFile ce770e03-79490-0-4797918642871082-tmp-tgz /home/jose/tmp/npm-16158/1386702379490-0.4797918642871082/tmp.tgz
+41 silly lockFile ce770e03-79490-0-4797918642871082-tmp-tgz /home/jose/tmp/npm-16158/1386702379490-0.4797918642871082/tmp.tgz
+42 verbose from cache /home/jose/tmp/npm-16158/1386702379490-0.4797918642871082/package/package.json
+43 verbose tar pack [ '/home/jose/.npm/ep_sticky_attributes/0.0.2/package.tgz',
+43 verbose tar pack   '/home/jose/tmp/npm-16158/1386702379490-0.4797918642871082/package' ]
+44 verbose tarball /home/jose/.npm/ep_sticky_attributes/0.0.2/package.tgz
+45 verbose folder /home/jose/tmp/npm-16158/1386702379490-0.4797918642871082/package
+46 silly lockFile b3b6315a-79490-0-4797918642871082-package /home/jose/tmp/npm-16158/1386702379490-0.4797918642871082/package
+47 verbose lock /home/jose/tmp/npm-16158/1386702379490-0.4797918642871082/package /home/jose/.npm/b3b6315a-79490-0-4797918642871082-package.lock
+48 silly lockFile 1e7df856-cky-attributes-0-0-2-package-tgz /home/jose/.npm/ep_sticky_attributes/0.0.2/package.tgz
+49 verbose lock /home/jose/.npm/ep_sticky_attributes/0.0.2/package.tgz /home/jose/.npm/1e7df856-cky-attributes-0-0-2-package-tgz.lock
+50 silly lockFile b3b6315a-79490-0-4797918642871082-package /home/jose/tmp/npm-16158/1386702379490-0.4797918642871082/package
+51 silly lockFile b3b6315a-79490-0-4797918642871082-package /home/jose/tmp/npm-16158/1386702379490-0.4797918642871082/package
+52 silly lockFile 1e7df856-cky-attributes-0-0-2-package-tgz /home/jose/.npm/ep_sticky_attributes/0.0.2/package.tgz
+53 silly lockFile 1e7df856-cky-attributes-0-0-2-package-tgz /home/jose/.npm/ep_sticky_attributes/0.0.2/package.tgz
+54 silly lockFile 6565b4ca--sticky-attributes-0-0-2-package /home/jose/.npm/ep_sticky_attributes/0.0.2/package
+55 verbose lock /home/jose/.npm/ep_sticky_attributes/0.0.2/package /home/jose/.npm/6565b4ca--sticky-attributes-0-0-2-package.lock
+56 silly lockFile 6565b4ca--sticky-attributes-0-0-2-package /home/jose/.npm/ep_sticky_attributes/0.0.2/package
+57 silly lockFile 6565b4ca--sticky-attributes-0-0-2-package /home/jose/.npm/ep_sticky_attributes/0.0.2/package
+58 verbose tar unpack /home/jose/.npm/ep_sticky_attributes/0.0.2/package.tgz
+59 silly lockFile 6565b4ca--sticky-attributes-0-0-2-package /home/jose/.npm/ep_sticky_attributes/0.0.2/package
+60 verbose lock /home/jose/.npm/ep_sticky_attributes/0.0.2/package /home/jose/.npm/6565b4ca--sticky-attributes-0-0-2-package.lock
+61 silly lockFile 1e7df856-cky-attributes-0-0-2-package-tgz /home/jose/.npm/ep_sticky_attributes/0.0.2/package.tgz
+62 verbose lock /home/jose/.npm/ep_sticky_attributes/0.0.2/package.tgz /home/jose/.npm/1e7df856-cky-attributes-0-0-2-package-tgz.lock
+63 silly gunzTarPerm modes [ '755', '644' ]
+64 silly gunzTarPerm extractEntry package.json
+65 silly gunzTarPerm extractEntry .npmignore
+66 silly gunzTarPerm extractEntry .travis.yml
+67 silly gunzTarPerm extractEntry ep.json
+68 silly gunzTarPerm extractEntry static/css/ace.css
+69 silly gunzTarPerm extractEntry static/js/sticky_attributes.js
+70 verbose read json /home/jose/.npm/ep_sticky_attributes/0.0.2/package/package.json
+71 silly lockFile 6565b4ca--sticky-attributes-0-0-2-package /home/jose/.npm/ep_sticky_attributes/0.0.2/package
+72 silly lockFile 6565b4ca--sticky-attributes-0-0-2-package /home/jose/.npm/ep_sticky_attributes/0.0.2/package
+73 silly lockFile 1e7df856-cky-attributes-0-0-2-package-tgz /home/jose/.npm/ep_sticky_attributes/0.0.2/package.tgz
+74 silly lockFile 1e7df856-cky-attributes-0-0-2-package-tgz /home/jose/.npm/ep_sticky_attributes/0.0.2/package.tgz
+75 silly shasum updated bytes 2179
+76 info shasum dd80cde206c30ca29d2aa587e392fb33aa601dab
+76 info shasum /home/jose/.npm/ep_sticky_attributes/0.0.2/package.tgz
+77 verbose from cache /home/jose/.npm/ep_sticky_attributes/0.0.2/package/package.json
+78 verbose chmod /home/jose/.npm/ep_sticky_attributes/0.0.2/package.tgz 644
+79 verbose chown /home/jose/.npm/ep_sticky_attributes/0.0.2/package.tgz [ 1000, 1000 ]
+80 silly lockFile 3a52ce78- .
+81 silly publish { name: 'ep_sticky_attributes',
+81 silly publish   version: '0.0.2',
+81 silly publish   keywords:
+81 silly publish    [ 'bold',
+81 silly publish      'formatting',
+81 silly publish      'sticky_attributes',
+81 silly publish      'attributes',
+81 silly publish      'style',
+81 silly publish      'italic',
+81 silly publish      'underline' ],
+81 silly publish   description: 'Add support to for attributes to stick on the caret position IE pressing bold button then typing creates bold text or hitting control b then typing creates bold text.  Works for underline, italic, bold',
+81 silly publish   author:
+81 silly publish    { name: 'John McLear',
+81 silly publish      email: 'john@mclear.co.uk',
+81 silly publish      url: 'http://mclear.co.uk' },
+81 silly publish   repository:
+81 silly publish    { type: 'git',
+81 silly publish      url: 'git://github.com/johnmclear/ep_sticky_attributes.git' },
+81 silly publish   dependencies: {},
+81 silly publish   engines: { node: '*' },
+81 silly publish   _id: 'ep_sticky_attributes@0.0.2',
+81 silly publish   readme: 'ERROR: No README.md file found!',
+81 silly publish   dist: { shasum: 'dd80cde206c30ca29d2aa587e392fb33aa601dab' },
+81 silly publish   _from: '.' }
+82 verbose url raw ep_sticky_attributes
+83 verbose url resolving [ 'https://registry.npmjs.org/', './ep_sticky_attributes' ]
+84 verbose url resolved https://registry.npmjs.org/ep_sticky_attributes
+85 info trying registry request attempt 1 at 19:06:30
+86 http PUT https://registry.npmjs.org/ep_sticky_attributes
+87 http 409 https://registry.npmjs.org/ep_sticky_attributes
+88 verbose url raw ep_sticky_attributes
+89 verbose url resolving [ 'https://registry.npmjs.org/', './ep_sticky_attributes' ]
+90 verbose url resolved https://registry.npmjs.org/ep_sticky_attributes
+91 info trying registry request attempt 1 at 19:06:31
+92 http GET https://registry.npmjs.org/ep_sticky_attributes
+93 http 200 https://registry.npmjs.org/ep_sticky_attributes
+94 error publish fail Cannot publish over existing version.
+94 error publish fail Update the 'version' field in package.json and try again.
+94 error publish fail
+94 error publish fail If the previous version was published in error, see:
+94 error publish fail     npm help unpublish
+94 error publish fail
+94 error publish fail To automatically increment version numbers, see:
+94 error publish fail     npm help version
+95 error System Linux 3.5.0-18-generic
+96 error command "/usr/local/bin/node" "/usr/local/bin/npm" "publish"
+97 error cwd /home/jose/etherpad-lite/node_modules/ep_sticky_attributes
+98 error node -v v0.10.4
+99 error npm -v 1.2.18
+100 error code EPUBLISHCONFLICT
+101 verbose exit [ 1, true ]
