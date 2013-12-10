@@ -1,0 +1,14 @@
+{
+  "parts": [
+    {
+      "name": "ep_sticky_attributes",
+      "client_hooks": {
+        "postAceInit": "ep_sticky_attributes/static/js/sticky_attributes",
+        "aceEditEvent": "ep_sticky_attributes/static/js/sticky_attributes",
+        "aceKeyEvent": "ep_sticky_attributes/static/js/sticky_attributes",
+        "aceAttribsToClasses": "ep_sticky_attributes/static/js/sticky_attributes",
+        "aceEditorCSS": "ep_sticky_attributes/static/js/sticky_attributes"
+      }
+    }
+  ]
+}

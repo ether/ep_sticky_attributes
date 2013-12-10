@@ -1,0 +1,23 @@
+{
+  "name":        "ep_sticky_attributes",
+  "version":     "0.0.1",
+  "keywords":    ["bold", "formatting", "sticky_attributes", "attributes", "style", "italic", "underline"],
+  "description": "Add support to for attributes to stick on the caret position IE pressing bold button then typing creates bold text or hitting control b then typing creates bold text.  Works for underline, italic, bold",
+
+  "author": {
+    "name": "John McLear",
+    "email": "john@mclear.co.uk",
+    "url": "http://mclear.co.uk"
+  },
+
+  "repository" : {
+    "type": "git",
+    "url":  "git://github.com/johnmclear/ep_sticky_attributes.git"
+  },
+
+  "dependencies": {},
+
+  "engines": {
+    "node": "*"
+  }
+}
