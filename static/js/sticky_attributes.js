@@ -47,6 +47,7 @@ exports.aceKeyEvent = function(hook, callstack, editorInfo, rep, documentAttribu
   var k = evt.keyCode;
   var rep = callstack.rep;
   var documentAttributeManager = callstack.documentAttributeManager;
+  // If no text is selected..
   if(rep.selStart[0] == rep.selEnd[0] && rep.selEnd[1] == rep.selStart[1]){
     if(evt.ctrlKey && (k == 66 || k == 73 || k == 85) && evt.type == "keyup"){
       // handling bold, italic or underline event
@@ -71,21 +72,18 @@ exports.aceKeyEvent = function(hook, callstack, editorInfo, rep, documentAttribu
       documentAttributeManager.setAttributesOnRange(rep.selStart, rep.selEnd, [ ['hidden', true] ]); // hides the car
     }
   }
+
+  // If text is selected IE Control B is placed when a selection is highlighted
+  if(rep.selStart[0] !== rep.selEnd[0] && rep.selEnd[1] !== rep.selStart[1]){
+    if(evt.ctrlKey && (k == 66 || k == 73 || k == 85) && evt.type == "keyup"){
+      checkAttr(callstack);
+    }
+  }
 }
 
-exports.aceEditEvent = function(hook, call, editorInfo, rep, documentAttributeManager){
-  // If it's not a click or a key event and the text hasn't changed then do nothing
-  if(!(call.callstack.type == "handleClick") && !(call.callstack.type == "handleKeyEvent") && !(call.callstack.docTextChanged)){
-    return false;
-  }
-/*
-  if(!call.callstack.observedSelection){
-    console.log("Not observed");
-    return false;
-  }
-*/
+function checkAttr(call){
+  var rep = call.rep;
   setTimeout(function(){ // avoid race condition..
-    rep = call.rep;
     if(rep.selStart[1] != 1){ // seems messy but basically this is required to know if we're following a previous attribute
       $.each(attributes, function(k,attribute){
         rep.selStart[1] = rep.selStart[1]-1;
@@ -101,6 +99,14 @@ exports.aceEditEvent = function(hook, call, editorInfo, rep, documentAttributeMa
       });
     }
   },250);
+}
+
+exports.aceEditEvent = function(hook, call, editorInfo, rep, documentAttributeManager){
+  // If it's not a click or a key event and the text hasn't changed then do nothing
+  if(!(call.callstack.type == "handleClick") && !(call.callstack.type == "handleKeyEvent") && !(call.callstack.docTextChanged)){
+    return false;
+  }
+  checkAttr(call);
 }
 
 exports.aceEditorCSS = function(hook_name, cb){return ["/ep_sticky_attributes/static/css/ace.css"];} // inner pad CSS
