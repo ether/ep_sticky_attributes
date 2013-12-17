@@ -1,7 +1,8 @@
 var attributes = {
   66: "bold",
   73: "italic",
-  85: "underline"
+  85: "underline",
+  27: "strikethrough"
 }
 
 exports.postAceInit = function(hook, context){
