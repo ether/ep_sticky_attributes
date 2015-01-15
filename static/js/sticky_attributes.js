@@ -23,10 +23,10 @@ exports.postAceInit = function(hook, context){
         rep.selStart[1] = rep.selStart[1]-1; // overwrite the secret hidden character
         if(!isApplied){ // If the attribute is not already applied
           ace.ace_setAttributeOnSelection(attribute, true);
-          $('#'+attribute+' > a').addClass('activeButton');
+          $('.buttonicon-'+attribute).parent().addClass('activeButton');
         }else{
           ace.ace_setAttributeOnSelection(attribute, false);
-          $('#'+attribute+' > a').removeClass('activeButton');
+          $('.buttonicon-'+attribute).parent().removeClass('activeButton');
         }
         ace.ace_toggleAttributeOnSelection("hidden");
       }
@@ -64,11 +64,12 @@ exports.aceKeyEvent = function(hook, callstack, editorInfo, rep, documentAttribu
       rep.selStart[1] = rep.selStart[1]-1; // overwrite the secret hidden character
       if(!isApplied){ // If the attribute is not already applied
         callstack.editorInfo.ace_setAttributeOnSelection(attribute, true);
-        $('#'+attribute+' > a').addClass('activeButton');
+        $('.buttonicon-'+attribute).parent().addClass('activeButton');
       }else{
         callstack.editorInfo.ace_setAttributeOnSelection(attribute, false);
-        $('#'+attribute+' > a').removeClass('activeButton');
+        $('.buttonicon-'+attribute).parent().removeClass('activeButton');
       }
+
       documentAttributeManager.setAttributesOnRange(rep.selStart, rep.selEnd, [ ['hidden', true] ]); // hides the car
     }
   }
@@ -90,9 +91,9 @@ function checkAttr(call){
         rep.selEnd[1] = rep.selEnd[1]-1;
         var isApplied = call.editorInfo.ace_getAttributeOnSelection(attribute);
         if(isApplied){
-          $('#'+attribute+' > a').addClass('activeButton');
+          $('.buttonicon-'+attribute).parent().addClass('activeButton');
         }else{
-          $('#'+attribute+' > a').removeClass('activeButton');
+          $('.buttonicon-'+attribute).parent().removeClass('activeButton');
         }
         rep.selStart[1] = rep.selStart[1]+1;
         rep.selEnd[1] = rep.selEnd[1]+1;
