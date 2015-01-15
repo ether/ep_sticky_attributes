@@ -2,7 +2,7 @@ var attributes = {
   66: "bold",
   73: "italic",
   85: "underline",
-  27: "strikethrough"
+  53: "strikethrough"
 }
 
 exports.postAceInit = function(hook, context){
@@ -45,7 +45,6 @@ exports.postAceInit = function(hook, context){
 
 // Change the attribute into a class	
 exports.aceAttribsToClasses = function(hook, context){
-  // console.log("attribs", context);
   if(context.key.indexOf("hidden") !== -1){
     return ['hidden'];
   }
@@ -58,7 +57,7 @@ exports.aceKeyEvent = function(hook, callstack, editorInfo, rep, documentAttribu
   var documentAttributeManager = callstack.documentAttributeManager;
   // If no text is selected..
   if(rep.selStart[0] == rep.selEnd[0] && rep.selEnd[1] == rep.selStart[1]){
-    if(evt.ctrlKey && (k == 66 || k == 73 || k == 85) && evt.type == "keyup"){
+    if(evt.ctrlKey && (k == 66 || k == 73 || k == 85 || k == 53) && evt.type == "keyup"){
       // handling bold, italic or underline event
       callstack.editorInfo.ace_replaceRange(undefined, undefined, "V"); // puts in a secret hidden cahracter
       var attribute = attributes[k]; // which attribute is it?
