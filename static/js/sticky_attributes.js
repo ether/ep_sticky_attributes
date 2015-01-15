@@ -6,12 +6,20 @@ var attributes = {
 }
 
 exports.postAceInit = function(hook, context){
-  $('#bold, #italic, #underline, #strikethrough').bind('click', function(button){
+  // On click of a bold etc. button
+  $('.buttonicon-bold, .buttonicon-italic, .buttonicon-underline, .buttonicon-strikethrough').parent().parent().bind('click', function(button){
     var padeditor = require('ep_etherpad-lite/static/js/pad_editor').padeditor;
     return padeditor.ace.callWithAce(function (ace) {
       rep = ace.ace_getRep();
+
+      // if we're not selecting any text
       if(rep.selStart[0] == rep.selEnd[0] && rep.selEnd[1] == rep.selStart[1]){
-        var attribute = $(button)[0].currentTarget.id;
+
+        // get the clicked attribute IE bold, italic
+        var buttonEle = $(button)[0].currentTarget;
+        var attribute = $(buttonEle).data("key");
+
+        // Replace the current
         ace.ace_replaceRange(rep.selStart, rep.selEnd, "V");
         if(rep.selStart[1] != 1){ // seems messy but basically this is required to know if we're following a previous attribute
           rep.selStart[1] = rep.selStart[1]-1;
@@ -21,6 +29,7 @@ exports.postAceInit = function(hook, context){
           rep.selEnd[1] = rep.selEnd[1]+1;
         }
         rep.selStart[1] = rep.selStart[1]-1; // overwrite the secret hidden character
+
         if(!isApplied){ // If the attribute is not already applied
           ace.ace_setAttributeOnSelection(attribute, true);
           $('.buttonicon-'+attribute).parent().addClass('activeButton');
@@ -86,18 +95,24 @@ function checkAttr(call){
   var rep = call.rep;
   setTimeout(function(){ // avoid race condition..
     if(rep.selStart[1] != 1){ // seems messy but basically this is required to know if we're following a previous attribute
-      $.each(attributes, function(k,attribute){
+
+      if(rep.selStart[1] !== 0){
         rep.selStart[1] = rep.selStart[1]-1;
         rep.selEnd[1] = rep.selEnd[1]-1;
+      }
+      $.each(attributes, function(k,attribute){
         var isApplied = call.editorInfo.ace_getAttributeOnSelection(attribute);
         if(isApplied){
           $('.buttonicon-'+attribute).parent().addClass('activeButton');
         }else{
           $('.buttonicon-'+attribute).parent().removeClass('activeButton');
         }
+      });
+      if(rep.selStart[1] !== 0){
         rep.selStart[1] = rep.selStart[1]+1;
         rep.selEnd[1] = rep.selEnd[1]+1;
-      });
+      }
+
     }
   },250);
 }
