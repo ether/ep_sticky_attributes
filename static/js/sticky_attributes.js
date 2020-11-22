@@ -63,7 +63,7 @@ exports.aceKeyEvent = function (hook, callstack, cb) {
     clientVars.sticky.attribute = attribute;
   } else {
     clientVars.sticky.setAttribute = false;
-    return false;
+    return cb(false);
   }
 };
 
@@ -82,14 +82,14 @@ function checkAttr(context, documentAttributeManager) {
 }
 
 
-exports.aceEditEvent = function (hook, context, editorInfo) {
+exports.aceEditEvent = function (hook, context, cb) {
   const call = context.callstack;
   const documentAttributeManager = context.documentAttributeManager;
   const padeditor = require('ep_etherpad-lite/static/js/pad_editor').padeditor;
 
-  if (call.type !== 'idleWorkTimer') return;
+  if (call.type !== 'idleWorkTimer') return cb();
   const rep = context.documentAttributeManager.rep;
-  if (!rep.selStart && !rep.selEnd) return;
+  if (!rep.selStart && !rep.selEnd) return cb();
 
   // Are we supposed to be applying or removing an attribute?
   if (!clientVars.sticky || !clientVars.sticky.setAttribute) {
@@ -146,6 +146,7 @@ exports.aceEditEvent = function (hook, context, editorInfo) {
   setTimeout(() => {
     checkAttr(context, documentAttributeManager);
   }, 100);
+  return cb();
 };
 
 exports.aceEditorCSS = function (hook_name, cb) { return ['/ep_sticky_attributes/static/css/ace.css']; }; // inner pad CSS
