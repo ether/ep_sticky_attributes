@@ -1,3 +1,5 @@
+![Publish Status](https://github.com/ether/ep_sticky_attributes/workflows/Node.js%20Package/badge.svg) ![Backend Tests Status](https://github.com/ether/ep_sticky_attributes/workflows/Backend%20tests/badge.svg)
+
 # Make Bold et al sticky :) 
 Apply Bold/Italic/Underline with a click/control B keyboard command then type.
 This is useful if you are used to hitting control b and typing and expecting that text to be bold.
