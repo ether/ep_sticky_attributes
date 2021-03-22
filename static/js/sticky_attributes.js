@@ -56,7 +56,7 @@ exports.aceAttribsToClasses = (hook, context) => {
   }
 };
 
-exports.aceKeyEvent = (hook, callstack) => {
+exports.aceKeyEvent = (hook, callstack,cb) => {
   const evt = callstack.evt;
   const k = evt.keyCode;
   const isAttributeKey = (
@@ -92,7 +92,7 @@ const checkAttr = (context, documentAttributeManager) => {
 };
 
 
-exports.aceEditEvent = (hook, context) => {
+exports.aceEditEvent = (hook, context,cb) => {
   const call = context.callstack;
   const documentAttributeManager = context.documentAttributeManager;
   const padeditor = require('ep_etherpad-lite/static/js/pad_editor').padeditor;
