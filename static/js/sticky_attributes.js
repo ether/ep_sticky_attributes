@@ -56,7 +56,7 @@ exports.aceAttribsToClasses = (hook, context) => {
   }
 };
 
-exports.aceKeyEvent = (hook, callstack,cb) => {
+exports.aceKeyEvent = (hook, callstack, cb) => {
   const evt = callstack.evt;
   const k = evt.keyCode;
   const isAttributeKey = (
@@ -73,6 +73,8 @@ exports.aceKeyEvent = (hook, callstack,cb) => {
     clientVars.sticky.setAttribute = false;
     return cb(false);
   }
+
+  return cb();
 };
 
 const checkAttr = (context, documentAttributeManager) => {
@@ -92,7 +94,7 @@ const checkAttr = (context, documentAttributeManager) => {
 };
 
 
-exports.aceEditEvent = (hook, context,cb) => {
+exports.aceEditEvent = (hook, context, cb) => {
   const call = context.callstack;
   const documentAttributeManager = context.documentAttributeManager;
   const padeditor = require('ep_etherpad-lite/static/js/pad_editor').padeditor;
