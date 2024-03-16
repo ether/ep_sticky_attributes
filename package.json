@@ -1,6 +1,6 @@
 {
   "name": "ep_sticky_attributes",
-  "version": "0.1.13",
+  "version": "0.1.14",
   "keywords": [
     "bold",
     "formatting",
@@ -22,22 +22,19 @@
   },
   "dependencies": {},
   "engines": {
-    "node": ">=12.17.0"
+    "node": ">=18.0.0"
   },
   "funding": {
     "type": "individual",
     "url": "https://etherpad.org/"
   },
   "devDependencies": {
-    "eslint": "^8.11.0",
-    "eslint-config-etherpad": "^3.0.9",
-    "typescript": "^4.5.5"
+    "eslint": "^8.57.0",
+    "eslint-config-etherpad": "^4.0.4",
+    "typescript": "^5.4.2"
   },
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint --fix ."
-  },
-  "peerDependencies": {
-    "ep_etherpad-lite": ">=1.8.6"
   }
 }
