@@ -1,6 +1,6 @@
 {
   "name": "ep_sticky_attributes",
-  "version": "0.1.17",
+  "version": "0.1.18",
   "keywords": [
     "bold",
     "formatting",
@@ -20,7 +20,6 @@
     "type": "git",
     "url": "git://github.com/johnmclear/ep_sticky_attributes.git"
   },
-  "dependencies": {},
   "engines": {
     "node": ">=18.0.0"
   },
@@ -29,9 +28,9 @@
     "url": "https://etherpad.org/"
   },
   "devDependencies": {
-    "eslint": "^8.57.0",
+    "eslint": "^8.57.1",
     "eslint-config-etherpad": "^4.0.4",
-    "typescript": "^5.4.2"
+    "typescript": "^5.9.3"
   },
   "scripts": {
     "lint": "eslint .",
