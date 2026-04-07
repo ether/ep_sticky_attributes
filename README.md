@@ -8,7 +8,7 @@ This is useful if you are used to hitting control b and typing and expecting tha
 ![Screenshot](https://user-images.githubusercontent.com/220864/106892053-7450e500-66e3-11eb-9e08-c763d22f0628.gif)
 
 ## Installing
-npm install ep_sticky_attribiutes
+npm install ep_sticky_attributes
 
 or Use the Etherpad ``/admin`` interface.
 
