@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/johnmclear/ep_sticky_attributes.git"
+    "url": "https://github.com/ether/ep_sticky_attributes.git"
   },
   "engines": {
     "node": ">=18.0.0"
