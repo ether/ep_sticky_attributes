@@ -63,18 +63,24 @@ exports.aceKeyEvent = (hook, callstack, cb) => {
     evt.ctrlKey && (
       k === 66 || k === 73 || k === 85 || k === 53) && evt.type === 'keyup');
 
-  clientVars.sticky = {};
+  // Don't clobber an already-pending sticky on every unrelated keyup.
+  // aceEditEvent only consumes clientVars.sticky on the next
+  // `idleWorkTimer` tick, which typically fires *after* the key-up of
+  // the character that was just typed. The old code reset
+  // `clientVars.sticky = {}` at the top of every aceKeyEvent, so the
+  // keyup of the next typed character cleared the sticky state before
+  // the idleWorkTimer had a chance to apply bold — the keyboard
+  // shortcut silently did nothing (#64). The consumer in aceEditEvent
+  // already resets `setAttribute` back to false once it has applied.
+  if (!clientVars.sticky) clientVars.sticky = {};
 
   if (isAttributeKey) {
-    const attribute = attributes[k]; // which attribute is it?
     clientVars.sticky.setAttribute = true;
-    clientVars.sticky.attribute = attribute;
-  } else {
-    clientVars.sticky.setAttribute = false;
-    return cb(false);
+    clientVars.sticky.attribute = attributes[k];
+    return cb();
   }
 
-  return cb();
+  return cb(false);
 };
 
 const checkAttr = (context, documentAttributeManager) => {
