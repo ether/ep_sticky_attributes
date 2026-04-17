@@ -1,4 +1,4 @@
-![Publish Status](https://github.com/ether/ep_sticky_attributes/workflows/Node.js%20Package/badge.svg) [![Backend Tests Status](https://github.com/ether/ep_sticky_attributes/actions/workflows/test-and-release.yml/badge.svg)](https://github.com/ether/ep_sticky_attributes/actions/workflows/test-and-release.yml)
+![Demo](demo.gif) [![Backend Tests Status](https://github.com/ether/ep_sticky_attributes/actions/workflows/test-and-release.yml/badge.svg)](https://github.com/ether/ep_sticky_attributes/actions/workflows/test-and-release.yml)
 
 # Make Bold et al sticky :) 
 Apply Bold/Italic/Underline with a click/control B keyboard command then type.
