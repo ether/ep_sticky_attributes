@@ -6,6 +6,41 @@ const attributes = {
   85: 'underline',
   53: 'strikethrough',
 };
+const lineAttributes = {
+  alignLeft: 'left',
+  alignCenter: 'center',
+  alignJustify: 'justify',
+  alignRight: 'right',
+};
+
+const getStickyState = () => {
+  if (!clientVars.sticky) clientVars.sticky = {};
+  if (!clientVars.sticky.lineAttributes) clientVars.sticky.lineAttributes = {};
+  return clientVars.sticky;
+};
+
+exports.getStickyLineAttributeFromButton = (buttonEle) => {
+  if (!buttonEle) return null;
+  const dataKey = $(buttonEle).data('key');
+  if (dataKey && lineAttributes[dataKey]) return ['align', lineAttributes[dataKey]];
+  const dataAlign = $(buttonEle).data('align');
+  if (dataAlign == null) return null;
+  return ['align', ['left', 'center', 'justify', 'right'][Number(dataAlign)]];
+};
+
+exports.applyStickyLineAttributes = (rep, documentAttributeManager, sticky) => {
+  if (!rep.selStart || !rep.selEnd || !sticky || !sticky.lineAttributes) return false;
+  const isNotSelection = (rep.selStart[0] === rep.selEnd[0] && rep.selEnd[1] === rep.selStart[1]);
+  if (!isNotSelection) return false;
+  let changed = false;
+  $.each(sticky.lineAttributes, (attribute, value) => {
+    if (value == null) return;
+    if (documentAttributeManager.getAttributeOnLine(rep.selStart[0], attribute) === value) return;
+    documentAttributeManager.setAttributeOnLine(rep.selStart[0], attribute, value);
+    changed = true;
+  });
+  return changed;
+};
 
 exports.postAceInit = (hook, context) => {
   // On click of a bold etc. button
@@ -47,6 +82,22 @@ exports.postAceInit = (hook, context) => {
           }
         }, 'stickyAttribute');
       });
+
+  $('body').on(
+      'click',
+      'li[data-key="alignLeft"], li[data-key="alignCenter"], ' +
+      'li[data-key="alignJustify"], li[data-key="alignRight"]',
+      function () {
+        const padeditor = require('ep_etherpad-lite/static/js/pad_editor').padeditor;
+        return padeditor.ace.callWithAce((ace) => {
+          const rep = ace.ace_getRep();
+          if (rep.selStart[0] !== rep.selEnd[0] || rep.selEnd[1] !== rep.selStart[1]) return;
+          const sticky = getStickyState();
+          const stickyLineAttribute = exports.getStickyLineAttributeFromButton(this);
+          if (!stickyLineAttribute) return;
+          sticky.lineAttributes[stickyLineAttribute[0]] = stickyLineAttribute[1];
+        }, 'stickyLineAttribute');
+      });
 };
 
 // Change the attribute into a class
@@ -72,11 +123,11 @@ exports.aceKeyEvent = (hook, callstack, cb) => {
   // the idleWorkTimer had a chance to apply bold — the keyboard
   // shortcut silently did nothing (#64). The consumer in aceEditEvent
   // already resets `setAttribute` back to false once it has applied.
-  if (!clientVars.sticky) clientVars.sticky = {};
+  const sticky = getStickyState();
 
   if (isAttributeKey) {
-    clientVars.sticky.setAttribute = true;
-    clientVars.sticky.attribute = attributes[k];
+    sticky.setAttribute = true;
+    sticky.attribute = attributes[k];
     return cb();
   }
 
@@ -111,7 +162,8 @@ exports.aceEditEvent = (hook, context, cb) => {
 
   // Are we supposed to be applying or removing an attribute?
   let isToProcess = true;
-  if (!clientVars.sticky || !clientVars.sticky.setAttribute) {
+  const sticky = getStickyState();
+  if (!sticky.setAttribute) {
     isToProcess = false;
   }
   let isNotSelection = false;
@@ -122,7 +174,7 @@ exports.aceEditEvent = (hook, context, cb) => {
     // Looks like we have work to do.. Let's go!
     isNotSelection = (rep.selStart[0] === rep.selEnd[0] && rep.selEnd[1] === rep.selStart[1]);
     isFirstCharacter = (rep.selStart[1] === 0);
-    attribute = clientVars.sticky.attribute;
+    attribute = sticky.attribute;
   }
 
   // Create a hidden element and set the attribute on it
@@ -155,9 +207,8 @@ exports.aceEditEvent = (hook, context, cb) => {
         rep.selStart, rep.selEnd, [['hidden', true]]); // hides the char
   }
 
-  if (clientVars.sticky) {
-    clientVars.sticky.setAttribute = false;
-  }
+  if (sticky) sticky.setAttribute = false;
+  exports.applyStickyLineAttributes(rep, documentAttributeManager, sticky);
 
   setTimeout(() => {
     checkAttr(context, documentAttributeManager);
